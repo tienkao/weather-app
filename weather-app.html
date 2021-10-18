@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+       .temp{
+           font-size: larger;
+       }
+       .condition{
+          font-size: 1.2em;
+          position: relative;
+          bottom: 70px;
+          right:30px;
+       }
+       .days{
+           font-size: large;
+       }
+    </style>
+</head>
+<body class="w-75 mx-auto">
+    <div class="container">
+        <div class="card mt-3 p-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h2 id="place"></h2>
+                        <br>
+                        <h2 id = "date"></h2>
+                        <div id="weather-adjective"></div>
+                        </div>
+                    
+                    <div class="col-2">
+                        <form action="" id="city"> 
+                        <input type="text" name="search" class="p-2 " placeholder="Search City" id = "city-input">
+                    </div>
+                    <div class="col-2 text-center">
+                        <input type ="submit" class="btn btn-primary" value="Search">
+                    </div>
+                    <div class="col-2 text-center">
+                       <button class="btn btn-success" id="current-location">Current</button>
+                    </div>
+                </div> 
+            </form>
+                <div class="temp text-center mt-4">
+                    <a href="#" id="degree">°C</a>
+                    <a href="#" id="f">F</a>
+                 <h1 id="temperature"> 18°</h1>
+                 </div>
+                 <div class="weatherIcon text-warning text-center">
+                   <h1> <i class="fas fa-sun"></i></h1>
+                 </div>
+                 <div class="condition">
+                    
+                     <p class="text-end">Humidity: <span id="humidity"></span>% </p>
+                     <p class="text-end"> Wind: <span id="wind"></span> km/h</p>
+                   
+                    
+                 </div>
+                 <div class="row">
+                     <div class="col">
+                         <p class="h3 font-weight-light"> Mon</p>
+                     </div>
+                     <div class="col">
+                        <p class="h3 font-weight-light"> Tue</p>
+                     </div>
+                     <div class="col">
+                        <p class="h3 font-weight-light"> Wed</p>
+                     </div>
+                     <div class="col">
+                        <p class="h3 font-weight-light"> Thu</p>
+                     </div>
+                     <div class="col">
+                        <p class="h3 font-weight-light"> Fri</p>
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col">
+                        <h3>
+                        <i class="fas fa-cloud-rain text-primary"></i>
+                    </h3>
+                     </div>
+                     <div class="col">
+                         <h3>
+                        <i class="fas fa-cloud-sun-rain text-primary"></i>
+                    </h3>
+                     </div>
+                     <div class="col">
+                         <h3>
+                        <i class="fas fa-sun text-warning"></i>
+                    </h3>
+                     </div>
+                     <div class="col">
+                         <h3>
+                        <i class="fas fa-cloud-sun text-secondary"></i>
+                    </h3>
+                     </div>
+                     <div class="col">
+                         <h3>
+                        <i class="fas fa-sun text-warning"></i>
+                    </h3>
+                     </div>
+                 </div>
+        </div>
+    </div>
+   <script src="index.js"></script>
+</body>
+</html>
