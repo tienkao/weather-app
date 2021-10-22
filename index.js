@@ -45,7 +45,13 @@ let months =["Jan", "Feb", "March", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "O
 let month = months[now.getMonth()];
 let date = now.getDate();
 let hours = now.getHours();
-let minutes = now.getMinutes()<10?'0':'' + now.getMinutes();
+if(hours < 10){
+    hours = `0${hours}`;
+}
+let minutes = now.getMinutes();
+if(minutes < 10){
+    minutes = `0${minutes}`;
+}
 h2.innerHTML = `${month} ${date} ${hours}:${minutes}`;
 
 

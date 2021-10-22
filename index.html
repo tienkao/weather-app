@@ -16,12 +16,10 @@
         <div class="card mt-3 p-3">
             <div class="card-body">
                 <div class="row">
+                    
                     <div class="col-4">
                         <h2 id="place" class="h1"></h2>
-                        <br>
-                        <h2 id = "date"></h2>
-                        <div id="weather-adjective" class="fs-4"></div>
-                        </div>
+                    </div>
                     
                     <div class="col-4">
                         <form action="" id="city"> 
@@ -34,19 +32,25 @@
                        <button class="btn btn-success" id="current-location">Current</button>
                     </div>
                 </div> 
-            </form>
-                <div class="temp text-center mt-4">
-                    <a href="#" id="degree" >°C</a>
-                    <a href="#" id="f">F</a>
-                 <h1 id="temperature"></h1>
-                </div>
-                <div class="weatherIcon text-warning text-center">
-                    <h1> <i class="fas fa-sun"></i></h1>
-                </div>
-                <div class="condition">
-                    <p class="text-end">Humidity: <span id="humidity"></span>% </p>
-                    <p class="text-end"> Wind: <span id="wind"></span> km/h</p>
-                </div>
+                    <h2 id = "date"></h2>
+                    </form>
+                    <div class="row"><div class="col-4">
+                        <div id="weather-adjective" class="fs-4"></div>
+                    </div>
+                        <div class="col-4">
+                            <div class="temp text-center">
+                                <a href="#" id="degree">°C</a>
+                                <a href="#" id="f">F</a>
+                                <h1 id="temperature"></h1>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="condition fs-5">
+                                <p>Humidity: <span id="humidity"></span>% </p>
+                                <p> Wind: <span id="wind"></span> km/h</p>
+                            </div>
+                        </div>
+                    </div>
                 <div class="row">
                 <div class="col">
                     <p class="h3 font-weight-light"> Mon</p>
