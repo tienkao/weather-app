@@ -8,3 +8,10 @@
 #temperature{
     font-size: 90px;
 }
+li{
+    list-style: none;
+}
+ul{
+    position: relative;
+    top: 30px;
+}
