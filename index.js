@@ -76,14 +76,29 @@ function displayWeather(response){
     //console.log(response.data);
     document.querySelector("#place").innerHTML = response.data.name;celsiusTemperature = response.data.main.temp;
     document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
-    
-
-   
     document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
     document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector("#weather-adjective").innerHTML = response.data.weather[0].main;
     document.querySelector("#weather-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     document.querySelector("#weather-icon").setAttribute("alt", `${response.data.weather[0].description}`)
+}
+
+
+function displayForecast(){
+let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML ="hello";
+forecastHTML = ` 
+<div class="row">
+    <div class="col">
+        <div class="weather-forcast-date">Mon</div>
+        <div class="icon"><img src="" alt=""></div>
+        <span class="max-temperature">20 </span>
+        <span class="min-temperature">15</span>
+    </div>
+</div>`;
+
+forecastElement.innerHTML = forecastHTML;
 }
 
 function searchCity(city){
