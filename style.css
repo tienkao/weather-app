@@ -1,3 +1,6 @@
+#place, #date{
+    color: rgb(78, 73, 73);
+}
 .temp{
     font-size: larger;
 }
@@ -13,13 +16,14 @@ li{
 }
 ul{
     position: relative;
-    top: 30px;
+    top: 40px;
 }
 .units{
     position: relative;
-    top: -60px;
+    top: -50px;
+    font-size: 20px;
 }
-.units a{
+/* .units a{
     text-decoration: none;
 }
 .units .active{
@@ -31,3 +35,4 @@ ul{
     color: black;
     text-decoration: none;
 }
+ */
