@@ -81,7 +81,7 @@ function getForecast(coordinates){
     axios.get(apiUrl).then(displayForecast);
 }
 function displayWeather(response){
-    //console.log(response.data);
+    console.log(response.data.wind);
     document.querySelector("#place").innerHTML = response.data.name;celsiusTemperature = response.data.main.temp;
     document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
     document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
@@ -162,7 +162,7 @@ searchCity("Tokyo");
 
 
 
-let celsiusTemperaure = null;
+/* let celsiusTemperaure = null;
 
 function displayFahrenheit(event){
     event.preventDefault();
@@ -189,3 +189,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
+ */
