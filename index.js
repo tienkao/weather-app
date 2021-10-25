@@ -63,15 +63,23 @@ function getCurrentLocation(event){
 
 function searchLocation(position){
     let latitude = position.coords.latitude;
-            let longitude = position.coords.longitude;
-            let units = "metric";
-            let apiKey = "4862096a12087cffaa0f38c4b3cddb16";
-            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-            console.log(apiUrl);
+    let longitude = position.coords.longitude;
+    let units = "metric";
+    let apiKey = "4862096a12087cffaa0f38c4b3cddb16";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+    console.log(apiUrl);
     axios.get(apiUrl).then(displayWeather);
 }
 
 
+function getForecast(coordinates){
+    console.log(coordinates);
+    let apiKey = "4862096a12087cffaa0f38c4b3cddb16";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+    //console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+}
 function displayWeather(response){
     //console.log(response.data);
     document.querySelector("#place").innerHTML = response.data.name;celsiusTemperature = response.data.main.temp;
@@ -80,25 +88,33 @@ function displayWeather(response){
     document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector("#weather-adjective").innerHTML = response.data.weather[0].main;
     document.querySelector("#weather-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    document.querySelector("#weather-icon").setAttribute("alt", `${response.data.weather[0].description}`)
+    document.querySelector("#weather-icon").setAttribute("alt", `${response.data.weather[0].description}`);
+
+
+    getForecast(response.data.coord);
 }
 
 
-function displayForecast(){
+function displayForecast(response){
+    console.log(response.data.daily);
 let forecastElement = document.querySelector("#forecast");
+let forecastHTML =`<div class="row">`;
+let days = ["Mon", "Tue", "Wed"];
+days.forEach(function(day){
+forecastHTML = forecastHTML + `
 
-let forecastHTML ="hello";
-forecastHTML = ` 
-<div class="row">
-    <div class="col">
-        <div class="weather-forcast-date">Mon</div>
-        <div class="icon"><img src="" alt=""></div>
-        <span class="max-temperature">20 </span>
-        <span class="min-temperature">15</span>
-    </div>
-</div>`;
+<div class="col">
+    <div class="weather-forcast-date">${day}</div>
+    <div class="icon"><img src="" alt=""></div>
+    <span class="max-temperature">20 </span>
+    <span class="min-temperature">15</span>
+</div>
+`;
+})
+forecastHTML = forecastHTML + `</div>`;
 
 forecastElement.innerHTML = forecastHTML;
+//console.log(forecastHTML);
 }
 
 function searchCity(city){
@@ -133,6 +149,7 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Tokyo");
+
 
 
 let celsiusTemperaure = null;
