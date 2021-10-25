@@ -113,7 +113,7 @@ forecast.forEach(function(forecastDay, index){ //index = 0~8: number of array
     if(index < 6){
 forecastHTML = forecastHTML + `
 
-<div class="col-2 text-center pt-5 p-2">
+<div class="col-2 text-center ">
     <div class="weather-forcast-date">${formatDay(forecastDay.dt)}</div>
     <div class="weather-description"><strong>${forecastDay.weather[0].main}</strong></div>
     <div class="icon"><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt=""></div>

@@ -9,58 +9,54 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overlock&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container w-50 mx-auto mt-5">
-        <div class="card mt-3 p-3">
-            <div class="card-body">
-                <div class="row">
-                    
-                    <div class="col-4">
-                        <h2 id="place" class="h1"></h2>
-                    </div>
-                    
-                    <div class="col-4">
-                        <form action="" id="city"> 
-                        <input type="text" name="search" class="p-2 w-100 " placeholder="Search City" id = "city-input">
-                        </form>
-                    </div>
-                    <div class="col-2 text-center">
-                        <input type ="submit" class="btn btn-primary w-100" value="Search">
-                    </div>
-                    <div class="col-2 text-center">
-                       <button class="btn btn-success" id="current-location">Current</button>
-                    </div>
-                </div> 
-                    <h2 id = "date"></h2>
-                    <div class="row">
-                        <div class="col-4">
-                        <div id="weather-adjective" class="fs-4"></div>
-                        <img src="" id="weather-icon" alt="">
-                    </div>
-                        <div class="col-4 temp text-center">
-                            <strong id="temperature"></strong>
-                            <span class="units"> °C</span>
-                           <!--  <a href="#" id="celcius-link" class="active">°C</a> |
-                            <a href="#" id="fahrenheit-link">°F</a>
-                            </span> -->
-                        </div>
-                        <div class="col-4">
-                            <div class="condition fs-5">
-                                <ul>
-                                    <li>Humidity: <span id="humidity"></span>%</li>
-                                    <li>Wind: <span id="wind"></span> m/s</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="forecast">
-                       
-                    </div>
+    <div class="container mx-auto w-50 mt-5">
+        <div class="weather-app">
+        <div class="row">
+            <div class="col-4">
+                <h2 id="place" class="h1"></h2>
             </div>
-        </div>
+            <div class="col-4">
+                <form action="" id="city"> 
+                <input type="text" name="search" class="p-2 w-100 shadow bg-white rounded" placeholder="Search City" id = "city-input">
+                </form>
+            </div>
+            <div class="col-2 text-center">
+                <input type ="submit" class="btn btn-primary w-100" value="Search">
+            </div>
+            <div class="col-2 text-center">
+                <button class="btn btn-success" id="current-location">Current</button>
+            </div>
+        </div> 
+            <h2 id = "date"></h2>
+            <div class="row">
+                <div class="col-4">
+                <div id="weather-adjective" class="fs-4"></div>
+                <img src="" id="weather-icon" alt="">
+            </div>
+            <div class="col-4 temp text-center">
+                <strong id="temperature"></strong>
+                <span class="units"> °C</span>
+                <!--  <a href="#" id="celcius-link" class="active">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+                </span> -->
+            </div>
+            <div class="col-4">
+                <div class="condition fs-5">
+                    <ul>
+                        <li>Humidity: <span id="humidity"></span>%</li>
+                        <li>Wind: <span id="wind"></span> m/s</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="forecast" class="weekly-forecast"> </div>      
+        </div> </div>
         <a href="https://github.com/tienkao/weather-app" target="blank">Open Source code</a> by Suzuka Tajiri
+   
     </div>
    <script src="index.js"></script>
 </body>
