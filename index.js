@@ -141,14 +141,14 @@ function handleSubmit(event){
     event.preventDefault();
     let cityInput = document.querySelector("#city-input");
     
-    console.log(cityInput.value);
+    /* console.log(cityInput.value);
     let h2 = document.querySelector("h2");
     if(cityInput.value){
          h2.innerHTML=`${cityInput.value}`;
     }else{
         h2.innerHTML = null;
         alert("Please type a city");
-    } 
+    }  */
  
     let city = document.querySelector("#city-input").value;
     searchCity(city);
