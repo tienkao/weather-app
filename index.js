@@ -73,7 +73,7 @@ function searchLocation(position){
 
 
 function getForecast(coordinates){
-    console.log(coordinates);
+    //console.log(coordinates);
     let apiKey = "4862096a12087cffaa0f38c4b3cddb16";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
@@ -105,7 +105,7 @@ return days[day];
 
 function displayForecast(response){
 let forecast = response.data.daily;
-console.log(response.data);
+//console.log(response.data);
 let forecastElement = document.querySelector("#forecast");
 let forecastHTML =`<div class="row">`;
 //let days = ["Mon", "Tue", "Wed"];
@@ -139,7 +139,7 @@ function searchCity(city){
 
 function handleSubmit(event){
     event.preventDefault();
-    /* let cityInput = document.querySelector("#city-input");
+    let cityInput = document.querySelector("#city-input");
     
     console.log(cityInput.value);
     let h2 = document.querySelector("h2");
@@ -148,7 +148,7 @@ function handleSubmit(event){
     }else{
         h2.innerHTML = null;
         alert("Please type a city");
-    } */
+    } 
  
     let city = document.querySelector("#city-input").value;
     searchCity(city);
